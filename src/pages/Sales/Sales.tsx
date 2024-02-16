@@ -38,14 +38,14 @@ const Sales: React.FC = () => {
 	}, [dispatch]);
 
 	return (
-		<div className='w-full h-full flex flex-col bg-slate-200 p-6 pt-24 relative'>
+		<div className='w-full h-full flex flex-col bg-slate-200 p-4 pt-20 relative'>
 			<header className='w-full flex items-center justify-between p-6 pb-8 fixed left-0 top-0'>
 				<Link to={'/'}>
-					<figure className='h-11 aspect-square border border-slate-800 rounded-full flex items-center justify-center text-slate-800 text-sm'>
-						<ArrowLeftIcon className='w-5 h-5' />
+					<figure className='h-8 aspect-square border border-slate-800 rounded-full flex items-center justify-center text-slate-800 text-sm'>
+						<ArrowLeftIcon className='w-4 h-4' />
 					</figure>
 				</Link>
-				<h2 className='font-bold text-slate-800 text-3xl'>Ventas</h2>
+				<h2 className='font-bold text-slate-800 text-xl'>Ventas</h2>
 			</header>
 			<div className='w-full flex-grow space-y-2 overflow-auto pb-2'>
 				{sales &&

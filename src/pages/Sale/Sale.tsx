@@ -151,7 +151,7 @@ const Sale: React.FC = () => {
 	}, [dispatch, params.id]);
 
 	return (
-		<div className='select-none w-full h-full flex flex-col bg-slate-200 p-6 relative'>
+		<div className='select-none w-full h-full flex flex-col bg-slate-200 p-4 relative'>
 			{selected.open && (
 				<Product
 					product={selected.product}
@@ -173,21 +173,21 @@ const Sale: React.FC = () => {
 					}}
 				/>
 			)}
-			<header className='w-full flex items-center justify-between mb-8'>
+			<header className='w-full flex items-center justify-between mb-4'>
 				{sale?.state === 'processing' ? (
 					<button onClick={handleCancelSale}>
-						<figure className='h-11 bg-rose-100 aspect-square border border-rose-100 shadow-sm rounded-full flex items-center justify-center text-rose-600 text-sm'>
-							<TrashIcon className='w-5 h-5' />
+						<figure className='h-8 bg-rose-100 aspect-square border border-rose-100 shadow-sm rounded-full flex items-center justify-center text-rose-600 text-sm'>
+							<TrashIcon className='w-4 h-4' />
 						</figure>
 					</button>
 				) : (
 					<Link to={'/sales'}>
-						<figure className='h-11 aspect-square border border-slate-800 rounded-full flex items-center justify-center text-slate-800 text-sm'>
-							<ArrowLeftIcon className='w-5 h-5' />
+						<figure className='h-8 aspect-square border border-slate-800 rounded-full flex items-center justify-center text-slate-800 text-sm'>
+							<ArrowLeftIcon className='w-4 h-4' />
 						</figure>
 					</Link>
 				)}
-				<h2 className='h-11 font-bold text-slate-800 text-3xl leading-none flex items-center justify-center'>
+				<h2 className='h-8 font-bold text-slate-800 text-xl leading-none flex items-center justify-center'>
 					Venta {sale?.number || 0}
 				</h2>
 			</header>
@@ -214,16 +214,16 @@ const Sale: React.FC = () => {
 							}
 						}}
 						key={product._id}
-						className='w-full h-12 px-4 py-2 border border-slate-200 shadow-sm rounded-lg flex items-center justify-between bg-slate-100 select-none'
+						className='w-full h-10 px-2 py-1 border border-slate-200 shadow-sm rounded-lg flex items-center justify-between bg-slate-100 select-none'
 					>
-						<h2 className='font-bold text-lg text-slate-800 leading-tight'>
+						<h2 className='font-bold text-base text-slate-800 leading-tight'>
 							{product.name}
 						</h2>
-						<span className='ml-auto mr-2 text-sm text-slate-500 text-center leading-tight'>
+						<span className='ml-auto mr-2 text-xs text-slate-500 text-center leading-tight'>
 							{formatCurrency(product.price)}
 						</span>
-						<figure className=' h-full aspect-square bg-slate-300 rounded  flex items-center justify-center '>
-							<span className='text-base font-bold text-slate-600'>
+						<figure className=' h-6 aspect-square bg-slate-300 rounded  flex items-center justify-center '>
+							<span className='text-sm font-bold text-slate-600'>
 								{saleProducts.find(
 									(item: SaleProductType) =>
 										item.product === product._id,
@@ -242,13 +242,13 @@ const Sale: React.FC = () => {
 									if (sale.state === 'processing')
 										setPaymentMethod('cash');
 								}}
-								className={`flex-1 border flex items-center justify-start gap-2 p-4 h-14 rounded-lg transition-all ${
+								className={`flex-1 text-sm border flex items-center justify-start gap-2 p-4 h-10 rounded-lg transition-all ${
 									paymentMethod === 'cash'
 										? 'bg-slate-100 shadow text-slate-800 font-bold border-transparent'
 										: 'bg-slate-200 text-slate-500 border-slate-500'
 								}`}
 							>
-								<BanknotesIcon className='w-6 h-6' />
+								<BanknotesIcon className='w-4 h-4' />
 								Efectivo
 							</button>
 							<button
@@ -256,13 +256,13 @@ const Sale: React.FC = () => {
 									if (sale.state === 'processing')
 										setPaymentMethod('transfer');
 								}}
-								className={`flex-1 border flex items-center justify-start gap-2 p-4 h-14 rounded-lg transition-all ${
+								className={`flex-1 text-sm border flex items-center justify-start gap-2 p-4 h-10 rounded-lg transition-all ${
 									paymentMethod === 'transfer'
 										? 'bg-slate-100 shadow text-slate-800 font-bold border-transparent'
 										: 'bg-slate-200 text-slate-500 border-slate-500'
 								}`}
 							>
-								<QrCodeIcon className='w-6 h-6' />
+								<QrCodeIcon className='w-5 h-5' />
 								Transferencia
 							</button>
 						</>

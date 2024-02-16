@@ -79,13 +79,13 @@ const Home: React.FC = () => {
 
 	return (
 		<div className='w-full h-full flex bg-slate-700  flex-col'>
-			<div className='w-full p-6 pb-4'>
-				<header className='w-full flex items-center justify-between mb-8'>
+			<div className='w-full p-4'>
+				<header className='w-full flex items-center justify-between mb-4'>
 					<Menu as='div' className='relative inline-block text-left'>
 						<div>
 							<Menu.Button className='flex items-center space-x-2'>
-								<figure className='w-11 aspect-square bg-slate-400 border border-transparent rounded-full shadow-sm flex items-center justify-center'>
-									<UserIcon className='w-5 h-5 text-slate-700' />
+								<figure className='w-8 aspect-square bg-slate-400 border border-transparent rounded-full shadow-sm flex items-center justify-center'>
+									<UserIcon className='w-4 h-4 text-slate-700' />
 								</figure>
 								<div className='text-left'>
 									<h2 className='font-medium text-slate-100 leading-tight'>
@@ -170,13 +170,13 @@ const Home: React.FC = () => {
 					</Menu>
 					<button
 						onClick={handleCreateSale}
-						className='h-11 aspect-square bg-transparent border border-slate-400 rounded-full shadow-sm flex items-center justify-center text-slate-200 text-sm'
+						className='h-8 aspect-square bg-transparent border border-slate-400 rounded-full shadow-sm flex items-center justify-center text-slate-200 text-sm'
 					>
-						<ShoppingCartIcon className='w-5 h-5' />
+						<ShoppingCartIcon className='w-4 h-4' />
 					</button>
 				</header>
-				<div className='w-full p-10 bg-slate-800 rounded-xl text-center mb-4'>
-					<h1 className='text-5xl font-semibold text-slate-100'>
+				<div className='w-full p-6 bg-slate-800 rounded-xl text-center mb-4'>
+					<h1 className='text-4xl font-semibold text-slate-100'>
 						{formatCurrency(report?.totalSales || 0)}
 					</h1>
 				</div>
@@ -207,7 +207,7 @@ const Home: React.FC = () => {
 					</div>
 				</div>
 			</div>
-			<div className='w-full flex-grow bg-slate-100 rounded-t-3xl p-6'>
+			<div className='w-full flex-grow bg-slate-100 rounded-t-2xl p-4'>
 				<h3 className='font-semibold text-lg text-slate-900 mb-2'>
 					Productos vendidos
 				</h3>
@@ -215,7 +215,7 @@ const Home: React.FC = () => {
 					{products?.map((product) => (
 						<li
 							key={product._id}
-							className='w-full px-4 py-1.5 border-b last:border-0 border-slate-200 rounded flex items-center justify-between'
+							className='w-full px-4 py-1 border-b last:border-0 border-slate-200 rounded flex items-center justify-between'
 						>
 							<h2 className='font-medium text-slate-700'>
 								{product.name}
