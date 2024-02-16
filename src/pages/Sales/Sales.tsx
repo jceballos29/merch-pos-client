@@ -41,13 +41,13 @@ const Sales: React.FC = () => {
 		<div className='w-full h-full flex flex-col bg-slate-200 p-4 pt-20 relative'>
 			<header className='w-full flex items-center justify-between p-6 pb-8 fixed left-0 top-0'>
 				<Link to={'/'}>
-					<figure className='h-8 aspect-square border border-slate-800 rounded-full flex items-center justify-center text-slate-800 text-sm'>
-						<ArrowLeftIcon className='w-4 h-4' />
+					<figure className='h-8 border border-slate-800 rounded-full flex items-center justify-center text-slate-800 text-xs px-2.5'>
+						<ArrowLeftIcon className='w-4 h-4 mr-2' /> Volver
 					</figure>
 				</Link>
 				<h2 className='font-bold text-slate-800 text-xl'>Ventas</h2>
 			</header>
-			<div className='w-full flex-grow space-y-2 overflow-auto pb-2'>
+			<div className='w-full flex-grow space-y-1 overflow-auto pb-2'>
 				{sales &&
 					sales.map((sale) => <Sale key={sale._id} sale={sale} />)}
 			</div>

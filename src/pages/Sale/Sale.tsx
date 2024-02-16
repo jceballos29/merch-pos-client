@@ -176,14 +176,14 @@ const Sale: React.FC = () => {
 			<header className='w-full flex items-center justify-between mb-4'>
 				{sale?.state === 'processing' ? (
 					<button onClick={handleCancelSale}>
-						<figure className='h-8 bg-rose-100 aspect-square border border-rose-100 shadow-sm rounded-full flex items-center justify-center text-rose-600 text-sm'>
-							<TrashIcon className='w-4 h-4' />
+						<figure className='h-8 bg-rose-100 border border-rose-100 shadow-sm rounded-full flex items-center justify-center text-rose-600 text-xs px-2.5'>
+							<TrashIcon className='w-4 h-4 mr-2' /> Cancelar venta
 						</figure>
 					</button>
 				) : (
 					<Link to={'/sales'}>
-						<figure className='h-8 aspect-square border border-slate-800 rounded-full flex items-center justify-center text-slate-800 text-sm'>
-							<ArrowLeftIcon className='w-4 h-4' />
+						<figure className='h-8 border border-slate-800 rounded-full flex items-center justify-center text-slate-800 text-xs px-2.5'>
+							<ArrowLeftIcon className='w-4 h-4 mr-2' /> Volver
 						</figure>
 					</Link>
 				)}

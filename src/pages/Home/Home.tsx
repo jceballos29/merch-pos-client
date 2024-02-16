@@ -168,12 +168,15 @@ const Home: React.FC = () => {
 							</Menu.Items>
 						</Transition>
 					</Menu>
-					<button
-						onClick={handleCreateSale}
-						className='h-8 aspect-square bg-transparent border border-slate-400 rounded-full shadow-sm flex items-center justify-center text-slate-200 text-sm'
-					>
-						<ShoppingCartIcon className='w-4 h-4' />
-					</button>
+					{user?.role === 'user' && (
+						<button
+							onClick={handleCreateSale}
+							className='h-8 bg-transparent border border-slate-400 rounded-full shadow-sm flex items-center justify-center text-slate-200 text-xs px-2.5'
+						>
+							<ShoppingCartIcon className='w-4 h-4 mr-2' /> Nueva
+							venta
+						</button>
+					)}
 				</header>
 				<div className='w-full p-6 bg-slate-800 rounded-xl text-center mb-4'>
 					<h1 className='text-4xl font-semibold text-slate-100'>
