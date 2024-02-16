@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-	baseURL: 'http://localhost:8080',
+	baseURL: 'https://merch-pos-api-dev-tzmz.4.us-1.fl0.io',
 });
 
 api.interceptors.request.use((config) => {
